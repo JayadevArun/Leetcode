@@ -6,9 +6,11 @@ class Solution:
             rev=i[::-1]
             if rev in hm:
                 c+=1
-                del hm[rev]
+                hm[rev]-=1
+                if hm[rev]==0:
+                    del hm[rev]
             else:
-                hm[i]=1
+                hm[i]=hm.get(i,0)+1
         return c
 
         # c=0
