@@ -1,10 +1,10 @@
 class Solution:
     def destCity(self, paths: List[List[str]]) -> str:
-        hm={}
+        arr=[]
         for path in paths:
-            hm[path[0]]=path[1]
+            arr.append(path[0])
         for path in paths:
-            if path[1] not in hm:
+            if path[1] not in arr:
                 return path[1]
         
         # hm1={}
