@@ -6,12 +6,21 @@
 class Solution:
     def getDecimalValue(self, head: ListNode) -> int:
 
-        value=""
-        cur=head
-        while cur:
-            value+=str(cur.val)
-            cur=cur.next
-        return int(value, 2)
+        value=0
+        arr=[]
+        while head:
+            arr.append(head.val)
+            head=head.next
+        for i in arr:
+            value=value*2+i
+        return value
+
+        # value=""
+        # cur=head
+        # while cur:
+        #     value+=str(cur.val)
+        #     cur=cur.next
+        # return int(value, 2)
 
         # value=0
         # cur=head
