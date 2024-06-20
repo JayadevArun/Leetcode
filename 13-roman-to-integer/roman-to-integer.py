@@ -12,8 +12,9 @@ class Solution:
             'M': 1000  
         }
 
-        for i in range(len(s)):
-            if  i<len(s)-1 and hm[s[i]]<hm[s[i+1]]:
+        l=len(s)
+        for i in range(l):
+            if  i<l-1 and hm[s[i]]<hm[s[i+1]]:
                 integer-=hm[s[i]]
             else:
                 integer+=hm[s[i]]
