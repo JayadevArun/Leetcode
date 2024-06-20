@@ -1,8 +1,7 @@
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        for i in range(len(ransomNote)):
-            if ransomNote[i] in magazine:
-                magazine=magazine.replace(ransomNote[i],'',1)
-            else:
+        rN=set(ransomNote)
+        for i in rN:
+            if magazine.count(i)<ransomNote.count(i):
                 return False
         return True
