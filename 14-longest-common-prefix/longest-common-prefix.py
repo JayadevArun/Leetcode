@@ -3,8 +3,8 @@ class Solution:
         result=""
         word=strs[0]
         for i in range(len(word)):
-            for s in strs:
+            for s in strs[1:]:
                 if i==len(s) or word[i]!=s[i]:
-                    return result
-            result+=word[i]
-        return result
+                    return word[:i]
+        return word
+        
