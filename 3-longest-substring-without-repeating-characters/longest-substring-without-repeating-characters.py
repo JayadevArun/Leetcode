@@ -3,10 +3,11 @@ class Solution:
         chars=set()
         l=0
         result=0
-        for r in range(len(s)):
-            while s[r] in chars:
+        for ss in s:
+            while ss in chars:
                 chars.remove(s[l])
                 l+=1
-            chars.add(s[r])
-            result=max(result,r-l+1)
+            chars.add(ss)
+            if len(chars)>result:
+                result=len(chars)
         return result
