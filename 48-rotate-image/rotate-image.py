@@ -3,16 +3,8 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        l=0
-        r=len(matrix[0])-1
-        while l<r:
-            for i in range(r-l):
-                t=l
-                b=r
-                temp=matrix[t][l+i]
-                matrix[t][l+i]=matrix[b-i][l]
-                matrix[b-i][l]=matrix[b][r-i]
-                matrix[b][r-i]=matrix[t+i][r]
-                matrix[t+i][r]=temp
-            l+=1
-            r-=1
+        for r in range(len(matrix[0])):
+            for c in range(r, len(matrix[0])):
+                matrix[r][c], matrix[c][r] = matrix[c][r], matrix[r][c]
+        for r in range(len(matrix[0])):
+            matrix[r].reverse()
