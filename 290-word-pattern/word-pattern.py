@@ -1,24 +1,23 @@
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
-        words = s.split()
 
-        if len(pattern) != len(words):
+        words=s.split()
+
+        if len(pattern)!=len(words):
             return False
 
-        hmp = {}
-        hmw = {}
+        hm={}
+        ss=set()
 
-        for letter, word in zip(pattern, words):
-            if letter in hmp:
-                if hmp[letter] != word:
+        for letter,word in zip(pattern,words):
+            if letter in hm:
+                if hm[letter]!=word:
                     return False
             else:
-                hmp[letter] = word
-
-            if word in hmw:
-                if hmw[word] != letter:
+                if word not in ss:
+                    hm[letter]=word
+                    ss.add(word)
+                else:
                     return False
-            else:
-                hmw[word] = letter
-
+                    
         return True
