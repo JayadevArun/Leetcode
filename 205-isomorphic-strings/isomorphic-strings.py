@@ -1,19 +1,23 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
+        
+        if len(s) != len(t):
+            return False
+        
+        hms = {}
+        hmt = {}
 
-        if len(s)!=len(t):
-            return False  
-
-        hm={}
-        ss=set()
-
-        for letterS,letterT in zip(s,t):
-            if letterS in hm:
-                if hm[letterS]!=letterT:
+        for letterS, letterT in zip(s, t):
+            if letterS in hms:
+                if hms[letterS] != letterT:
                     return False
             else:
-                if letterT in ss:
+                hms[letterS] = letterT
+            
+            if letterT in hmt:
+                if hmt[letterT] != letterS:
                     return False
-                hm[letterS]=letterT
-                ss.add(letterT)
-        return True
+            else:
+                hmt[letterT] = letterS
+
+        return True    
