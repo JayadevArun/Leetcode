@@ -1,13 +1,12 @@
 class Solution:
     def isHappy(self, n: int) -> bool:
-
-        s=set()
-
-        while n!=1:
-            if n in s:
+        hm={}
+        while True:
+            n = sum(int(i) ** 2 for i in str(n))
+            if n==1:
+                return True
+            elif n in hm:
                 return False
-            s.add(n)
-
-            n=sum([int(i)**2 for i in str(n)])
+            else:
+                hm[n]=0
             
-        return True
