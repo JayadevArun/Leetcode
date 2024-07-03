@@ -1,12 +1,10 @@
 class Solution:
     def isHappy(self, n: int) -> bool:
-        hm={}
-        while True:
-            n = sum(int(i) ** 2 for i in str(n))
-            if n==1:
-                return True
-            elif n in hm:
+        hm = {}
+        while n != 1:
+            if n in hm:
                 return False
-            else:
-                hm[n]=0
+            hm[n] = 0
+            n = sum(int(i) ** 2 for i in str(n))
+        return True
             
