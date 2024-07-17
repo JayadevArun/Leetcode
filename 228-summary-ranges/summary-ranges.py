@@ -2,13 +2,15 @@ class Solution:
     def summaryRanges(self, nums: List[int]) -> List[str]:
         result=[]
         i=0
-        while i<len(nums):
+        n=len(nums)
+        while i<n:
             start=nums[i]
-            while i<len(nums)-1 and nums[i]+1==nums[i+1]:
+            while i<n-1 and nums[i]+1==nums[i+1]:
                 i+=1
-            if start!=nums[i]:
-                result.append(str(start)+'->'+str(nums[i]))
+            end=nums[i]
+            if start!=end:
+                result.append(str(start)+'->'+str(end))
             else:
-                result.append(str(nums[i]))
+                result.append(str(end))
             i+=1
         return result
