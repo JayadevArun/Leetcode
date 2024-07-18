@@ -2,15 +2,27 @@ class Solution:
     def isValid(self, s: str) -> bool:
         st=[]
         for item in s:
-            if st:
-                if item==')' and st[-1]=='(':
-                    st.pop()
-                elif item=='}' and st[-1]=='{':
-                    st.pop()
-                elif item==']' and st[-1]=='[':
+            if item in ['(','{','[']:
+                st.append(item)
+            elif item==')':
+                if len(st)==0:
+                    return False
+                if st[-1]=='(':
                     st.pop()
                 else:
-                    st.append(item)
-            else:
-                st.append(item)
-        return not st
+                    return False
+            elif item=='}':
+                if len(st)==0:
+                    return False
+                if st[-1]=='{':
+                    st.pop()
+                else:
+                    return False
+            elif item==']':
+                if len(st)==0:
+                    return False
+                if st[-1]=='[':
+                    st.pop()
+                else:
+                    return False
+        return len(st)==0
