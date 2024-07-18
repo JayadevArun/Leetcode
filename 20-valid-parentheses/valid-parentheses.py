@@ -2,16 +2,15 @@ class Solution:
     def isValid(self, s: str) -> bool:
         st=[]
         for item in s:
-            if item in '({[':
-                st.append(item)
+            if st:
+                if item==')' and st[-1]=='(':
+                    st.pop()
+                elif item=='}' and st[-1]=='{':
+                    st.pop()
+                elif item==']' and st[-1]=='[':
+                    st.pop()
+                else:
+                    st.append(item)
             else:
-                if not st:
-                    return False
-                top=st.pop()
-                if item==')' and top!='(':
-                    return False
-                if item=='}' and top!='{':
-                    return False
-                if item==']' and top!='[':
-                    return False
+                st.append(item)
         return not st
