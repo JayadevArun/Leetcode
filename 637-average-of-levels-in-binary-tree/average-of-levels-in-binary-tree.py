@@ -20,7 +20,4 @@ class Solution:
             dfs(node.left,h+1)
             dfs(node.right,h+1)
         dfs(root,0)
-        l=[]
-        for i in range(len(count)):
-            l.append(sum[i]/count[i])
-        return l
+        return [sum[i] / count[i] for i in range(len(count))]
