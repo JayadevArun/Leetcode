@@ -1,6 +1,7 @@
 class Solution:
     def reverseBits(self, n: int) -> int:
-        binstr = bin(n)[2:].zfill(32)
-        revstr = binstr[::-1]
-        revint = int(revstr, 2)
-        return revint
+        rev=0
+        for i in range(32):
+            rev=(rev<<1)+(n&1)
+            n=n>>1
+        return rev
