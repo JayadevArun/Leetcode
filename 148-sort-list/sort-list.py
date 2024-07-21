@@ -5,48 +5,21 @@
 #         self.next = next
 class Solution:
     def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-
-        if not head or not head.next:
-            return head
-
-        mid = self.fetchMid(head)
-        l = head
-        r = mid.next
-        mid.next = None
-
-        l=self.sortList(l)
-        r=self.sortList(r)
         
-        return self.mergeList(l,r)
+        cur = head
+        res = []
 
-    def fetchMid(self,head):
+        while cur:
+            res.append(cur.val)
+            cur = cur.next
 
-        s=head
-        f=head.next
+        cur = head
+        res.sort()
+        
+        for i in res:
+            cur.val = i
+            cur = cur.next
+            if not cur:
+                break
 
-        while f and f.next:
-            s=s.next
-            f=f.next.next
-
-        return s
-
-    def mergeList(self,l,r):
-
-        node = ListNode()
-        tail = node
-
-        while l and r:
-            if l.val < r.val:
-                tail.next = l
-                l = l.next
-            else:
-                tail.next = r
-                r = r.next
-            tail = tail.next
-
-        if l:
-            tail.next = l
-        elif r:
-            tail.next = r
-
-        return node.next
+        return head
