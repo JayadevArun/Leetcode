@@ -8,11 +8,12 @@ class Solution:
     def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
 
         if not nums:
-            return None
+            return
 
-        root=TreeNode(nums[len(nums)//2])
+        pivot=len(nums)//2
+        root=TreeNode(nums[pivot])
 
-        root.left=self.sortedArrayToBST(nums[:len(nums)//2])
-        root.right=self.sortedArrayToBST(nums[len(nums)//2+1:])
+        root.left=self.sortedArrayToBST(nums[:pivot])
+        root.right=self.sortedArrayToBST(nums[pivot+1:])
 
         return root
