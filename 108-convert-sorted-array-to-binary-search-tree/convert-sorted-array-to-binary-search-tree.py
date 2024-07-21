@@ -10,10 +10,9 @@ class Solution:
         if not nums:
             return None
 
-        midIndex=len(nums)//2
-        root=TreeNode(nums[midIndex])
+        root=TreeNode(nums[len(nums)//2])
 
-        root.left=self.sortedArrayToBST(nums[:midIndex])
-        root.right=self.sortedArrayToBST(nums[midIndex+1:])
+        root.left=self.sortedArrayToBST(nums[:len(nums)//2])
+        root.right=self.sortedArrayToBST(nums[len(nums)//2+1:])
 
         return root
