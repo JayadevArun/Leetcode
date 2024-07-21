@@ -9,11 +9,10 @@ class Solution:
         if not head or not head.next:
             return head
 
-        l=head
-        r=self.fetchMid(head)
-        temp=r.next
-        r.next=None
-        r=temp
+        mid = self.fetchMid(head)
+        l = head
+        r = mid.next
+        mid.next = None
 
         l=self.sortList(l)
         r=self.sortList(r)
