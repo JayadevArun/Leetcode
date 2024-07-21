@@ -9,14 +9,8 @@ class Solution:
 
         for i in range(max(len(a),len(b))):
 
-            if i<len(a):
-                d1=ord(a[i])-ord("0")
-            else:
-                d1=0
-            if i<len(b):
-                d2=ord(b[i])-ord("0")
-            else:
-                d2=0
+            d1 = ord(a[i]) - ord("0") if i < len(a) else 0
+            d2 = ord(b[i]) - ord("0") if i < len(b) else 0
 
             tot=d1+d2+c
             ch=str(tot%2)
