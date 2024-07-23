@@ -3,6 +3,8 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
+        if n==0:
+            return m
         l=m+n-1
         while m>0 and n>0:
             if nums1[m-1]>nums2[n-1]:
