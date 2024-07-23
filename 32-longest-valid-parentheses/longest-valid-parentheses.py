@@ -1,6 +1,9 @@
 class Solution:
     def longestValidParentheses(self, s: str) -> int:
 
+        if s=="":
+            return 0
+
         st=[-1]
         c=0
 
@@ -15,4 +18,3 @@ class Solution:
                     c=max(c,i-st[-1])
 
         return c
-
