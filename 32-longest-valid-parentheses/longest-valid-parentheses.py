@@ -7,8 +7,8 @@ class Solution:
         r=0
         m=0
 
-        for i in range(len(s)):
-            if s[i]=='(':
+        for i in s:
+            if i=='(':
                 l+=1
             else:
                 r+=1
@@ -21,8 +21,8 @@ class Solution:
         l=0
         r=0
 
-        for i in range(len(s)-1,-1,-1):
-            if s[i]=='(':
+        for i in reversed(s):
+            if i=='(':
                 l+=1
             else:
                 r+=1
