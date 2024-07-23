@@ -1,5 +1,7 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
         hm={}
         c=0
         for i in range(len(nums)):
@@ -8,5 +10,5 @@ class Solution:
                 hm[nums[i]]=1
                 nums[c]=nums[i]
                 c+=1
-                
+
         return c
