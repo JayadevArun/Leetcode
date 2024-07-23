@@ -1,5 +1,7 @@
 class Solution:
     def longestValidParentheses(self, s: str) -> int:
+        if s=="":
+            return 0
 
         l=0
         r=0
