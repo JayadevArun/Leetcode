@@ -3,7 +3,7 @@ class Solution:
         l=0
         c=0
         r=len(nums)-1
-        nums.sort()
+        nums=sorted(nums)
         while l<r:
             if nums[l]+nums[r]>k:
                 r-=1
