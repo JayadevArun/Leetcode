@@ -1,7 +1,7 @@
 class Solution:
     def maxVowels(self, s: str, k: int) -> int:
 
-        vowels='aeiouAEIOU'
+        vowels=set('aeiouAEIOU')
         c=0
         m=0
 
