@@ -3,10 +3,7 @@ class Solution:
         l = 0
         s = 0
         m = float('-inf') 
-        avg = 0  
-
-        if len(nums) <= k:
-            return sum(nums) / k 
+        avg = 0   
 
         for i in range(len(nums)):
             s += nums[i]
