@@ -1,7 +1,7 @@
 class Solution:
     def maxVowels(self, s: str, k: int) -> int:
 
-        vowels=['a','e','i','o','u','A','E','I','O','U']
+        vowels='aeiouAEIOU'
         c=0
         m=0
 
