@@ -3,8 +3,9 @@ class Solution:
         d = {}
         c = 0
         for num in nums:
-            if k-num in d and d[k-num] > 0:
-                d[k-num] -= 1
+            t=k-num
+            if t in d and d[t] > 0:
+                d[t] -= 1
                 c += 1
             else:
                 if num in d:
