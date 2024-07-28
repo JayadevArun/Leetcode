@@ -6,9 +6,5 @@ class Solution:
                 hm[num]=1
             else:
                 hm[num]+=1
-        s=set()
-        for number in hm.values():
-            if number in s:
-                return False
-            s.add(number)
-        return True
+        count_list = list(hm.values())
+        return len(count_list) == len(set(count_list))
