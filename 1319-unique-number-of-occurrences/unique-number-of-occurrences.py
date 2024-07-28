@@ -6,5 +6,5 @@ class Solution:
                 hm[num]=1
             else:
                 hm[num]+=1
-        count_list = list(hm.values())
-        return len(count_list) == len(set(count_list))
+        k=list(set(hm.values()))
+        return len(k) == len(hm)
