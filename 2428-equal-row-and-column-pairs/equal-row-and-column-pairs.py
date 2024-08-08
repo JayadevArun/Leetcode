@@ -1,14 +1,16 @@
 class Solution:
     def equalPairs(self, grid: List[List[int]]) -> int:
+        l=len(grid)
         hm={}
         count=0
         for r in grid:
-            if tuple(r) in hm:
-                hm[tuple(r)]+=1
+            rt=tuple(r)
+            if rt in hm:
+                hm[rt]+=1
             else:
-                hm[tuple(r)]=1
-        for i in range(len(grid)):
-                ct=tuple(grid[j][i] for j in range(len(grid)))
+                hm[rt]=1
+        for i in range(l):
+                ct=tuple(grid[j][i] for j in range(l))
                 if ct in hm:
                     count+=hm[ct]
         return count
