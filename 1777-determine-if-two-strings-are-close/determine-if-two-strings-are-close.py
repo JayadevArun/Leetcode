@@ -12,6 +12,4 @@ class Solution:
             l2.append(word2.count(c))
         l1.sort()
         l2.sort()
-        if l1==l2:
-            return True
-        return False
+        return l1==l2
