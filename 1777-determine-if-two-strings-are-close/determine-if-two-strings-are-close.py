@@ -1,7 +1,17 @@
 class Solution:
     def closeStrings(self, word1: str, word2: str) -> bool:
-        if set(word1)!=set(word2):
+        l1=[]
+        l2=[]
+        s1=set(word1)
+        s2=set(word2)
+        if s1!=s2:
             return False
-        c1=Counter(word1)
-        c2=Counter(word2)
-        return sorted(c1.values())==sorted(c2.values())
+        for c in s1:
+            l1.append(word1.count(c))
+        for c in s2:
+            l2.append(word2.count(c))
+        l1.sort()
+        l2.sort()
+        if l1==l2:
+            return True
+        return False
