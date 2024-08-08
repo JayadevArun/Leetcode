@@ -3,8 +3,7 @@ class Solution:
         st=[]
         for c in s:
             if c=="*":
-                if st:
-                    st.pop()
+                st.pop()
             else:
                 st.append(c)
         return ''.join(st)
