@@ -4,6 +4,4 @@ class Solution:
             return False
         c1=Counter(word1)
         c2=Counter(word2)
-        if sorted(c1.values())==sorted(c2.values()):
-            return True
-        return False
+        return sorted(c1.values())==sorted(c2.values())
