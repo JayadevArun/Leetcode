@@ -9,14 +9,10 @@ class Solution:
         if not head or not head.next:
             return None
 
-        one=head
-        two=head
-        prev=None
+        prev=one=two=head
         while two and two.next:
             prev=one
-            one=one.next
-            two=two.next.next
-        if prev:
-            prev.next=one.next
+            one,two=one.next,two.next.next
+        prev.next=one.next
 
         return head
