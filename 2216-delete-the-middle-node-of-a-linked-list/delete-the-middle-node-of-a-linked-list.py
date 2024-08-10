@@ -16,7 +16,7 @@ class Solution:
             prev=one
             one=one.next
             two=two.next.next
-
-        prev.next=one.next
+        if prev:
+            prev.next=one.next
 
         return head
