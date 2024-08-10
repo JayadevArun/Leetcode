@@ -5,6 +5,8 @@
 #         self.next = next
 class Solution:
     def pairSum(self, head: Optional[ListNode]) -> int:
+        if not head or not head.next:
+            return 0
 
         fast=head
         slow=head
