@@ -21,8 +21,8 @@ class Solution:
         for i in range(mid):
             prev=cur
             cur=cur.next
-        
-        prev.next=cur.next
+        if prev:
+            prev.next=cur.next
 
         return head
 
