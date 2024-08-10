@@ -1,8 +1,9 @@
 class Solution:
     def predictPartyVictory(self, senate: str) -> str:
+        l=len(senate)
         r=deque()
         d=deque()
-        for i in range(len(senate)):
+        for i in range(l):
             if senate[i]=='R':
                 r.append(i)
             else:
@@ -11,10 +12,7 @@ class Solution:
             ri=r.popleft()
             di=d.popleft()
             if ri<di:
-                r.append(ri+len(senate))
+                r.append(ri+l)
             else:
-                d.append(di+len(senate))
-        if r:
-            return 'Radiant'
-        else:
-            return 'Dire'
+                d.append(di+l)
+        return 'Radiant' if r else 'Dire'
