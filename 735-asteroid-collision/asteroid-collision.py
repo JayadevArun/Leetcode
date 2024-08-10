@@ -11,6 +11,6 @@ class Solution:
                 else:
                     ast=0
                     st.pop()
-            if ast!=0:
+            if ast:
                 st.append(ast)
         return st
