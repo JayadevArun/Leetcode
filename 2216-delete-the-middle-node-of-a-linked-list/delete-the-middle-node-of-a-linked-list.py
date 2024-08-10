@@ -8,21 +8,15 @@ class Solution:
 
         if not head or not head.next:
             return None
-        
-        l=0
-        cur=head
-        while cur:
-            l+=1
-            cur=cur.next
 
-        mid=l//2
-        cur=head
+        one=head
+        two=head
         prev=None
-        for i in range(mid):
-            prev=cur
-            cur=cur.next
-        if prev:
-            prev.next=cur.next
+        while two and two.next:
+            prev=one
+            one=one.next
+            two=two.next.next
+
+        prev.next=one.next
 
         return head
-
