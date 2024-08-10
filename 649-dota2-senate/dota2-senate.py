@@ -3,6 +3,7 @@ class Solution:
         senate=list(senate)
         radiant=deque()
         dire=deque()
+        n=len(senate)
         for i,ch in enumerate(senate):
             if ch=='R':
                 radiant.append(i)
@@ -12,7 +13,7 @@ class Solution:
             ri=radiant.popleft()
             di=dire.popleft()
             if ri<di:
-                radiant.append(ri+len(senate))
+                radiant.append(ri+n)
             else:
-                dire.append(di+len(senate))
+                dire.append(di+n)
         return 'Radiant' if radiant else 'Dire'
