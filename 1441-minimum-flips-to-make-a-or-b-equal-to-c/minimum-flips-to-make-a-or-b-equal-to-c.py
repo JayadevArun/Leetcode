@@ -13,11 +13,9 @@ class Solution:
             else:
                 if a_bit == 1 and b_bit == 1:
                     flips += 2
-                if a_bit == 0 and b_bit == 1:
+                if a_bit == 0 and b_bit == 1 or a_bit == 1 and b_bit == 0:
                     flips += 1
-                if a_bit == 1 and b_bit == 0: 
-                    flips += 1
-                    
+
             a >>= 1
             b >>= 1
             c >>= 1
