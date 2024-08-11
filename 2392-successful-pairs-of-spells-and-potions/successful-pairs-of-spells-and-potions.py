@@ -2,10 +2,10 @@ class Solution:
     def successfulPairs(self, spells: List[int], potions: List[int], success: int)->List[int]:
         res=[]
         potions.sort()
+        lp=len(potions)
         for spell in spells:
-            low=0
-            high=len(potions)-1
-            index=len(potions)
+            low,high=0,lp-1
+            index=lp
             while low<=high:
                 mid=(low+high)//2
                 if spell*potions[mid]>=success:
@@ -13,5 +13,5 @@ class Solution:
                     index=mid
                 else:
                     low=mid+1
-            res.append(len(potions)-index)
+            res.append(lp-index)
         return res
