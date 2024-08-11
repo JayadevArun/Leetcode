@@ -11,8 +11,5 @@ class Solution:
                     high=mid
                 else:
                     low=mid+1
-            if low==lp:
-                res.append(0)
-            else:
-                res.append(lp-low)
+            res.append(lp-low)
         return res
