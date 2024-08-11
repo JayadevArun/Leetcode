@@ -7,9 +7,9 @@ class Solution:
             mid=(low+high)//2
             hr=0
             for pile in piles:
-                hr+=math.ceil(pile/mid)
+                hr+=ceil(pile/mid)
             if hr<=h:
-                ans=min(ans,mid)
+                ans=mid
                 high=mid-1
             else:
                 low=mid+1
