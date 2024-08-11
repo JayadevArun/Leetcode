@@ -4,14 +4,15 @@ class Solution:
         potions.sort()
         lp=len(potions)
         for spell in spells:
-            low,high=0,lp-1
-            index=lp
-            while low<=high:
+            low,high=0,lp
+            while low<high:
                 mid=(low+high)//2
                 if spell*potions[mid]>=success:
-                    high=mid-1
-                    index=mid
+                    high=mid
                 else:
                     low=mid+1
-            res.append(lp-index)
+            if low==lp:
+                res.append(0)
+            else:
+                res.append(lp-low)
         return res
