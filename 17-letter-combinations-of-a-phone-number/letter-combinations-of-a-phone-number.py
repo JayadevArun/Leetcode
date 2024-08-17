@@ -19,11 +19,13 @@ class Solution:
         def recback(i,cur):
 
             if len(cur)==len(digits):
-                res.append(cur)
+                res.append("".join(cur))
                 return
 
             for ch in hm[digits[i]]:
-                recback(i+1,cur+ch)
+                cur.append(ch)
+                recback(i+1,cur)
+                cur.pop()
         
-        recback(0,"")
+        recback(0,[])
         return res
