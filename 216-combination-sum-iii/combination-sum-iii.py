@@ -9,10 +9,7 @@ class Solution:
                 res.append(cur[:])
                 return
 
-            if len(cur)>k:
-                return
-
-            if rem<0:
+            if len(cur)>k or rem<0:
                 return
 
             for i in range(low,10):
