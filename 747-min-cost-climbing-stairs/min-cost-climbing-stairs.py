@@ -1,9 +1,8 @@
 class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
-        n=len(cost)
         a=cost[0]
         b=cost[1]
-        for i in range(2,n):
+        for i in range(2,len(cost)):
             temp=min(a+cost[i],b+cost[i])
             a=b
             b=temp
