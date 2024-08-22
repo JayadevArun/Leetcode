@@ -1,16 +1,11 @@
 class Solution:
+    memo={}
     def tribonacci(self, n: int) -> int:
         if n==0:
             return 0
-        elif n==1 or n==2:
+        if n==1 or n==2:
             return 1
-        else:
-            t0=0
-            t1=1
-            t2=1
-            for i in range(3,n+1):
-                t=t0+t1+t2
-                t0=t1
-                t1=t2
-                t2=t
-        return t2
+        if n in self.memo:
+            return self.memo[n]
+        self.memo[n] = self.tribonacci(n-1) + self.tribonacci(n-2) + self.tribonacci(n-3)
+        return self.memo[n]
