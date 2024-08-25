@@ -6,4 +6,4 @@ class Solution:
             s=max(sum1+num,sum2)
             sum1=sum2
             sum2=s
-        return sum2
+        return max(sum1,sum2)
