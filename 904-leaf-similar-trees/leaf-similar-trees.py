@@ -11,8 +11,10 @@ class Solution:
         if root.left is None and root.right is None:
             l.append(root.val)
         else:
-            self.dfsLeaf(root.left,l)
-            self.dfsLeaf(root.right,l)
+            if root.left:
+                self.dfsLeaf(root.left,l)
+            if root.right:
+                self.dfsLeaf(root.right,l)
         return l
     def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
         l1,l2=[],[]
