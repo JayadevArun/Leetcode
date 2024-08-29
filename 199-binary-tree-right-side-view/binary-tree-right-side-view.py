@@ -11,7 +11,8 @@ class Solution:
             return []
         
         res=[]
-        q=deque([root])
+        q=deque()
+        q.append(root)
 
         while q:
             right=None
