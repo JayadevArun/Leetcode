@@ -19,11 +19,10 @@ class Solution:
                 return root.right
             elif not root.right:
                 return root.left
-            else:
-                cur=root.right
-                while cur.left:
-                    cur=cur.left
-                root.val=cur.val
-                root.right=self.deleteNode(root.right,cur.val)
+            cur=root.right
+            while cur.left:
+                cur=cur.left
+            root.val=cur.val
+            root.right=self.deleteNode(root.right,cur.val)
 
         return root
