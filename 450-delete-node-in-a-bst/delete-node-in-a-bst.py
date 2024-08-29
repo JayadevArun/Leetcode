@@ -20,10 +20,10 @@ class Solution:
             elif not root.right:
                 return root.left
             else:
-                s=root.right
-                while s.left:
-                    s=s.left
-                root.val=s.val
-                root.right=self.deleteNode(root.right,s.val)
+                successor=root.right
+                while successor.left:
+                    successor=successor.left
+                root.val=successor.val
+                root.right=self.deleteNode(root.right,successor.val)
 
         return root
