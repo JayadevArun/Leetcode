@@ -15,10 +15,9 @@ class Solution:
 
         while q:
             lvllen=len(q)
+            res.append(q[-1].val)
             for i in range(lvllen):
                 node=q.popleft()
-                if i==lvllen-1:
-                    res.append(node.val)
                 if node.left:
                     q.append(node.left)
                 if node.right:
