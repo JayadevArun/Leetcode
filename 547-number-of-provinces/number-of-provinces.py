@@ -2,7 +2,7 @@ class Solution:
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
         def dfs(c):
             visited.add(c)
-            for n in range(len(isConnected[c])):
+            for n in range(len(isConnected)):
                 if isConnected[c][n]==1 and n not in visited:
                     dfs(n)
         visited=set()
