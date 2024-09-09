@@ -25,9 +25,9 @@ class Solution:
                     
                     side[j]-=matchsticks[i] 
 
-                if side[j]==0:
+                if side[j]==0 or side[j]+matchsticks[i]==side_len:
                     break
-                    
+
             return False
 
         return backtrack(0)
