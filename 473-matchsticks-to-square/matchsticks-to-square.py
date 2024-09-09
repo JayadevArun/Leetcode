@@ -24,6 +24,10 @@ class Solution:
                         return True
                     
                     side[j]-=matchsticks[i] 
+
+                if side[j]==0:
+                    break
+                    
             return False
 
         return backtrack(0)
