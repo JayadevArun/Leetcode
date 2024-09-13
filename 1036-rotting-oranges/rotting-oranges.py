@@ -24,11 +24,10 @@ class Solution:
                 for dr,dc in dir:
                     row=dr+r
                     col=dc+c
-                    if (row<0 or row>=len(grid) or (col<0 or col>=len(grid[0]) or grid[row][col]!=1)):
-                        continue
-                    grid[row][col]=2
-                    queue.append([row,col])
-                    fresh-=1
+                    if 0 <= row < rows and 0 <= col < cols and grid[row][col] == 1:
+                        grid[row][col] = 2
+                        queue.append([row, col])
+                        fresh -= 1
             time+=1
 
         if fresh==0:
