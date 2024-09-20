@@ -17,7 +17,8 @@ class Solution:
         ]
         res=[]
         for s,v in hp:
-            while num>=v:
-                res.append(s)
-                num-=v
+            c=num//v
+            if c>0:
+                res.append(s*c)
+                num-=v*c
         return ''.join(res) 
