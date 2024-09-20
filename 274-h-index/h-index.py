@@ -6,7 +6,6 @@ class Solution:
             if citations[i]>=i+1:
                 h=i+1
             else:
-                break
-        return h
-        #return len(citations)
+                return h
+        return len(citations)
             
