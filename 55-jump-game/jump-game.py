@@ -4,8 +4,5 @@ class Solution:
         for i in range(len(nums)-1,-1,-1):
             if nums[i]+i>=goal:
                 goal=i
-        if goal==0:
-            return True
-        else:
-            return False
+        return True if goal==0 else False
         
