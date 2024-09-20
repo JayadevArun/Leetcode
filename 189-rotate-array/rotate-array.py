@@ -3,7 +3,8 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        k=k%len(nums)
+        n=len(nums)
+        k=k%n
         l=len(nums)-k
         a=nums[:l]
         nums[:l]=[]
