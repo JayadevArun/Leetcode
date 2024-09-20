@@ -18,7 +18,7 @@ class Solution:
         res=[]
         for s,v in hp:
             c=num//v
-            if c>0:
+            if c:
                 res.append(s*c)
                 num-=v*c
         return ''.join(res) 
