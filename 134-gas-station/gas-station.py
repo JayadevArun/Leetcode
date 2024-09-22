@@ -10,7 +10,8 @@ class Solution:
                 s=i+1
         if sum(gas)<sum(cost):
             return -1
-        return s
+        else:
+            return s
 
                 
 
