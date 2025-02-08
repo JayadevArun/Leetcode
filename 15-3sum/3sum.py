@@ -4,7 +4,7 @@ class Solution:
         sums=0
         res=[]
         ss=set()
-        for i in range(len(nums)):
+        for i in range(len(nums)-2):
             j=i+1
             k=len(nums)-1
             while j<k:
