@@ -10,7 +10,8 @@ class Solution:
             while j<k:
                 s=nums[i]+nums[j]+nums[k]
                 if s==sums:
-                    ss.add((nums[i],nums[j],nums[k]))
+                    t=(nums[i],nums[j],nums[k])
+                    ss.add(t)
                     j+=1
                     k-=1
                 elif s<sums:
