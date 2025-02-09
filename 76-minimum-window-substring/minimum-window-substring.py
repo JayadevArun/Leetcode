@@ -1,6 +1,6 @@
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
-        if t=="":
+        if not s or not t:
             return ""
         
         hm1={}
