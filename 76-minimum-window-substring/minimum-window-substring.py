@@ -33,7 +33,7 @@ class Solution:
                 
                 l+=1
 
-        left,right=res
+        [left,right]=res
         if resl==float("inf"):
             return ""
         else:
