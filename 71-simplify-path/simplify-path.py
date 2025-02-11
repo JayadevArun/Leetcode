@@ -6,6 +6,7 @@ class Solution:
             if p=="..":
                 if st:
                     st.pop()
-            elif p and p!=".":
+            else:
+                if p and p!=".":
                     st.append(p)
         return "/"+"/".join(st)
