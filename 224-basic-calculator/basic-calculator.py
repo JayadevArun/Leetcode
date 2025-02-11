@@ -8,15 +8,12 @@ class Solution:
 
         for ch in s:
             if ch.isdigit():
-                num=10*num+int(ch)
+                num=num*10+int(ch)
 
             elif ch in "+-":
                 res+=sign*num
                 num=0
-                if ch=="+":
-                    sign=1
-                else:
-                    sign=-1
+                sign=1 if ch=="+" else -1
 
             elif ch=="(":
                 st.append(res)
