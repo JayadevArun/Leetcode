@@ -7,6 +7,7 @@ class Solution:
                 if st:
                     st.pop()
             else:
-                if p and p!=".":
-                    st.append(p)
+                if p:
+                    if p!=".":
+                        st.append(p)
         return "/"+"/".join(st)
