@@ -10,8 +10,7 @@ class Solution:
             newInterval[0]=min(newInterval[0],intervals[c][0])
             newInterval[1]=max(newInterval[1],intervals[c][1])
             c+=1
-        res.append(newInterval)
-                
+        res.append(newInterval)  
         while c<n:
             res.append(intervals[c])
             c+=1
