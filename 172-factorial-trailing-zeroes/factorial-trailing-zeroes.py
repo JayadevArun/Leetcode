@@ -1,5 +1,7 @@
 class Solution:
     def trailingZeroes(self, n: int) -> int:
+        if n==0:
+            return 0
         c2=0
         c5=0
         for i in range(1,n+1):
