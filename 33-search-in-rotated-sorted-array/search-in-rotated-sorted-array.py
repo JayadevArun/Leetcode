@@ -11,7 +11,7 @@ class Solution:
                     left=mid+1
                 else:
                     right=mid-1
-            elif nums[right]>=nums[mid]:
+            else:
                 if target<nums[mid] or target>nums[right]:
                     right=mid-1
                 else:
