@@ -11,6 +11,6 @@ class Solution:
             res=min(res,nums[mid])
             if nums[mid]>=nums[right]:
                 left=mid+1
-            else:
+            elif nums[mid]<nums[right]:
                 right=mid-1
         return res
