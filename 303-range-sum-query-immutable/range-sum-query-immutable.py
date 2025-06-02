@@ -9,9 +9,10 @@ class NumArray:
 
     def sumRange(self, left: int, right: int) -> int:
         r=self.arr[right]
-        l=self.arr[left-1]
-        if left==0:
-            return r
+        if left!=0:
+            l=self.arr[left-1]
+        else:
+            l=0
         return r-l
 
 
