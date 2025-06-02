@@ -8,9 +8,11 @@ class NumArray:
             self.arr.append(sums)
 
     def sumRange(self, left: int, right: int) -> int:
+        r=self.arr[right]
+        l=self.arr[left-1]
         if left==0:
-            return self.arr[right]
-        return self.arr[right]-self.arr[left-1]
+            return r
+        return r-l
 
 
 # Your NumArray object will be instantiated and called as such:
