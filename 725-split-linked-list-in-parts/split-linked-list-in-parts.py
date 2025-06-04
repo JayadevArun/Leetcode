@@ -20,10 +20,7 @@ class Solution:
         curr=head
         for i in range(k):
             phead=curr
-            if i<ex:
-                newpartsize=partsize+1
-            else:
-                newpartsize=partsize
+            newpartsize=partsize+1 if i<ex else partsize
 
             for j in range(newpartsize-1):
                 curr=curr.next
