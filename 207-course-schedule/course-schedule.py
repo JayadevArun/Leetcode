@@ -22,7 +22,4 @@ class Solution:
                 if indeg[n]==0:
                     q.append(n)
         
-        if count==numCourses:
-            return True
-        else:
-            return False
+        return count==numCourses
