@@ -16,5 +16,3 @@ class Solution:
             left+=1
         
         return count
-
-        return count
